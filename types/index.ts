@@ -1,4 +1,6 @@
-type Action = {
+import { SetStateAction } from "react"
+
+export type Action = {
 	file: any
 	file_name: string
 	file_size: number
@@ -10,4 +12,18 @@ type Action = {
 	is_error?: boolean
 	url?: any
 	output?: any
+}
+
+export type RenderFilesProps = {
+	action: Action
+	isLoaded: Boolean
+	updateAction: (file_name: String, to: String) => void
+	deleteAction: (action: Action) => void
+}
+
+export type ConvertFilesProps = {
+	actions: Action[]
+	setActions: React.Dispatch<SetStateAction<Action[]>>
+	setFiles: React.Dispatch<SetStateAction<any[]>>
+	ffmpegRef: any
 }
