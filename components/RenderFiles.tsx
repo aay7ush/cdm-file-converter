@@ -4,6 +4,7 @@ import { extensions } from "@/constants"
 import bytesToSize from "@/lib/bytes-to-size"
 import compressFileName from "@/lib/compress-file-name"
 import fileToIcon from "@/lib/file-to-icon"
+import { Action, RenderFilesProps } from "@/types"
 import { Check, Loader, ShieldAlert, X } from "lucide-react"
 import { useState } from "react"
 import { Badge } from "./ui/badge"
@@ -18,7 +19,12 @@ import {
 import { Skeleton } from "./ui/skeleton"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs"
 
-const RenderFiles = ({ action, isLoaded, updateAction, deleteAction }) => {
+const RenderFiles: React.FC<RenderFilesProps> = ({
+	action,
+	isLoaded,
+	updateAction,
+	deleteAction,
+}) => {
 	const [defaultValues, setDefaultValues] = useState<string>("video")
 	const [selcted, setSelected] = useState<string>("...")
 
@@ -31,7 +37,6 @@ const RenderFiles = ({ action, isLoaded, updateAction, deleteAction }) => {
 		document.body.appendChild(a)
 		a.click()
 
-		// Clean up after download
 		URL.revokeObjectURL(action.url)
 		document.body.removeChild(a)
 	}

@@ -2,7 +2,7 @@ import Dropzone from "@/components/Dropzone"
 
 export default function Home() {
 	return (
-		<div className="space-y-16 pb-8">
+		<section className="space-y-16 pb-8">
 			<div className="space-y-6 text-center">
 				<h1 className="text-3xl md:text-5xl font-medium">
 					Free Unlimited File Converter
@@ -16,6 +16,6 @@ export default function Home() {
 			</div>
 
 			<Dropzone />
-		</div>
+		</section>
 	)
 }
