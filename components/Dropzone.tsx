@@ -1,4 +1,4 @@
 const Dropzone = () => {
-	return <h1>Dropzone</h1>
+	return <h2>Dropzone</h2>
 }
 export default Dropzone
